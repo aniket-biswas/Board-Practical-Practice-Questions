@@ -1,0 +1,10 @@
+CREATE TABLE Shoppe (ID VARCHAR(4),SNAME CHAR(20),AREA CHAR(15));
+INSERT INTO Shoppe VALUES('S001', 'ABC Computers', 'CP'),('S002', 'All Infotech media', 'GK II'),('S003', 'Tech Shoppe', 'CP'),('S004', 'Geeks Tecno soft', 'Nehru Place'),('S005', 'Hitech Tech Store', 'Nehru Place');
+CREATE TABLE Accessories (No VARCHAR(3),Name CHAR(15), Price int, ID CHAR(15));
+INSERT INTO Accessories VALUES ('A01', 'Mother Board', '12000', 'S01'), ('A02', 'Hard DIsk', '5000', 'S01'), ('A03', 'Keyboard', '500', 'S02'), ('A04', 'Mouse', '300', 'S01'), ('A05', 'Mother Board', '13000', 'S02'), ('A06', 'Keyboard', '400', 'S03'), ('A07', 'LCD', '6000', 'S04'), ('A08', 'LCD', '5500', 'S05'), ('A09', 'Mouse', '350', 'S05'), ('A10', 'Hard Disk', '4500', 'S03');
+
+1)select Name,Price from Accessories order by Price;
+2)select ID,SNAME from Shoppe where area="Nehru Place";
+3)select Name,Max(Price),Min(Price) from accessories group by Price;
+4)select A.Name,A.Price,S.SNAME,S.ID from Accessories A,Shoppe S where A.ID=S.ID;
+

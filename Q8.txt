@@ -1,0 +1,10 @@
+create Table Company(PID INT(4),NAME CHAR(15),CITY CHAR(15),PRODUCTNAME CHAR(10));
+INSERT INTO COMPANY VALUES(2101, 'APPLE', 'DELHI', 'WATCH'),(2102, 'SAMSUNG', 'BANGALORE', 'MOBILE'),(2103, 'PANASONIC', 'DELHI', 'TV'),(2104, 'SONY', 'MUMBAI', 'MOBILE'),(2105, 'LENOVO', 'INDORE', 'TABLET'),(2106, 'DELL', 'MUMBAI', 'LAPTOP');
+
+create Table CUSTOMER(CUSTID INT(3),NAME CHAR(15),UNITPRICE INT,QTY INT,PID INT(4));
+INSERT INTO CUSTOMER VALUES(101, 'REENA SONI', 60000, 10, 2102),(102, 'MICHAEL PAUL', 50000, 20, 2106),(103, 'MEETALI SINGH', 70000, 15, 2101),(104, 'PARUL SOHAL', 55000, 3, 2103),(105, 'RAJESH DESHWAL', 45000, 7, 2104);
+
+1)select name from company order by name desc;
+2)alter table company add column TOTAL_PRICE float(10,2);
+3)select count(*),city from company group by city;
+4)select cus.name,cus.unitprice,cus.qty,com.productname from customer cus,company com where cus.pid=com.pid and city="mumbai";

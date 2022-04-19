@@ -1,0 +1,12 @@
+CREATE TABLE GAMES (GCODE INT(3), GameName CHAR(15), Type CHAR(7), Number INT, PrizeMoney INT, ScheduleDate DATE);
+INSERT INTO GAMES VALUES ('101', 'Carom Board', 'Indoor', '2', '5000', '2004-01-23'), ('102', 'Badminton', 'Outdoor', '2', '12000', '2003-12-12'), ('103', 'Table Tennis', 'Indoor', '4', '8000', '2004-02-14'), ('104', 'Chess', 'Indoor', '2', '9000', '2004-01-01'), ('105', 'Lawn Tennis', 'Outdoor', '4', '25000', '2004-03-19');
+
+CREATE TABLE PLAYER (PCODE INT, Name CHAR(15), GCODE INT);
+INSERT INTO PLAYER VALUES(1, 'Nabi Ahmed', 101),(2, 'Ravi Sahai', 108), (3, 'Jatin', 101),(4, 'Nazneen', 103);
+
+Answer--
+
+1. ALTER TABLE GAMES ADD(NumOfPlayer int);
+2. SELECT PLAYER.NAME, GAMES.GameName FROM PLAYER, GAMES WHERE GAMES.PrizeMoney > 9000 AND PLAYER.GCODE = GAMES.GCODE;
+3. SELECT TYPE, SUM(PrizeMoney) FROM GAMES GROUP BY TYPE;
+4. ALTER TABLE GAMES ADD PRIMARY KEY(GCODE);
